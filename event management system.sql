@@ -84,7 +84,13 @@ VALUES
     ("SIBL", 106, 16),
     ("BRAC", 107, 17);
 
-SELECT * FROM all_events;
+SELECT count(*) FROM all_users;
+SELECT sum(amount) From all_events;
 SELECT * FROM all_users;
 SELECT * FROM event_info;
 SELECT * FROM payment;
+
+SELECT e_name, amount, seat, meal, ei_date as date, ei_time as time 
+FROM all_events ae JOIN event_info ei ON ae.e_id = ei.e_id;
+SELECT * FROM all_users WHERE u_name = "James Brown";
+SELECT * FROM event_info WHERE ei_date = "2023-08-04";
